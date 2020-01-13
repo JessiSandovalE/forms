@@ -1,0 +1,57 @@
+<label class="container">
+  <input type="checkbox" [(ngModel)]="msn" data-md-icheck (change)="toggleVisibility($event)" />
+  Checkbox is MSN <span *ngIf="marked">checked</span><span *ngIf="!marked">unchecked</span>
+
+  <span class="checkmark"></span>
+</label>
+
+<label class="container mt-3">
+  <input type="checkbox" [(ngModel)]="email" data-md-icheck (change)="toggleVisibility($event)" />
+  Checkbox is Email <span *ngIf="marked">checked</span><span *ngIf="!marked">unchecked</span>
+
+  <span class="checkmark"></span>
+</label>
+
+<!-- <div>And <b>ngModel</b> also works, it's value is <b>{{theCheckbox}}</b></div> -->
+
+<div *ngIf="msn">
+  <form class="mt-5">
+    <h5>MSN</h5>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<!-- <div>And <b>ngModel</b> also works, it's value is <b>{{theCheckbox}}</b></div> -->
+
+<div *ngIf="email">
+  <form class="mt-5">
+    <h5>Email</h5>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TemplateComponent } from './components/template/template.component';
 import { DataComponent } from './components/data/data.component';
 import { ClientComponent } from './components/client/client.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateComponent,
     DataComponent,
-    ClientComponent
+    ClientComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

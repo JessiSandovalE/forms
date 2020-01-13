@@ -1,0 +1,183 @@
+<div class="container">
+    <h4 class="text-center">DATOS DEL CLIENTE</h4>
+    <hr>
+    <br><br>
+    <form [formGroup]="forma" (ngSubmit)="guardarCambios()">
+
+
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label " for="exampleFormControlSelect1">¿Tiene algún cliente relacionado?</label>
+            <div class="form-check form-check-inline col-1">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="si">
+                <label class="form-check-label" for="inlineRadio1">Si</label>
+            </div>
+            <div class="form-check form-check-inline col-1">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="no">
+                <label class="form-check-label" for="inlineRadio2">No</label>
+            </div>
+        </div>
+    </form>
+</div>
+
+<hr>
+
+<!-- En caso de que si tenga cliente relacionado -->
+<div class="form-group row ">
+    <label class="col-3 col-form-label ">Escriba el ID  nombre del cliente</label>
+    <div class="col-5 ">
+
+        <input class="form-control " type="text " placeholder="Apellido " formControlName="apellido">
+    </div>
+
+
+</div>
+<div class="form-group row ">
+    <label class="col-2 col-form-label ">&nbsp;</label>
+    <div class="input-group col-md-8 ">
+        <button type="submit " class="btn btn-outline-primary ">
+    Siguiente
+  </button>
+    </div>
+</div>
+<!-- Fin SI -->
+
+<hr>
+
+<!-- Sin cliente relacionado -->
+
+
+<form [formGroup]="forma" (ngSubmit)="guardarCambios()">
+    <div class="form-group row">
+        <label class="col-3 col-form-label " for="exampleFormControlSelect1">Tipo de Plan </label>
+        <div class="form-check form-check-inline col-1">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Pruebas">
+            <label class="form-check-label" for="inlineRadio1">Prepago</label>
+        </div>
+        <div class="form-check form-check-inline col-1">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">Pospago</label>
+        </div>
+    </div>
+
+    <div class="form-group row ">
+        <label class="col-3 col-form-label ">Nombre de la Empresa</label>
+        <div class="col-6 ">
+
+            <input class="form-control " type="text " placeholder="Apellido " formControlName="apellido">
+        </div>
+    </div>
+
+    <div class="form-group row ">
+        <label class="col-3 col-form-label ">Nombre de la Empresa</label>
+        <div class="col-6 ">
+
+            <input class="form-control " type="text " placeholder="Nombre Empresa " formControlName="apellido">
+        </div>
+    </div>
+
+    <div class="form-group row ">
+        <label class="col-3 col-form-label ">Número de Identificación</label>
+        <div class="col-6 ">
+
+            <input class="form-control " type="text " placeholder="NIT, CC, CE, RUT, RUC DNI, etc " formControlName="apellido">
+        </div>
+    </div>
+
+    <div class="form-group row ">
+        <label class="col-3 col-form-label ">Telefono</label>
+        <div class="col-6 ">
+
+            <input class="form-control " type="text " placeholder="Número de Celular " formControlName="apellido">
+        </div>
+    </div>
+
+    <div class="form-group row ">
+        <label class="col-3 col-form-label ">Email</label>
+        <div class="col-md-6 ">
+
+            <input class="form-control " type="email " placeholder="Correo electrónico " formControlName="correo">
+        </div>
+    </div>
+
+    <div class="form-group row ">
+        <label class="col-3 col-form-label ">Nombre Contacto del Cliente</label>
+        <div class="col-6 ">
+
+            <input class="form-control " type="text " placeholder="Nombre contacto " formControlName="apellido">
+        </div>
+    </div>
+
+    <div class="form-group row ">
+        <label class="col-2 col-form-label ">&nbsp;</label>
+        <div class="input-group col-md-8 ">
+            <button type="submit " class="btn btn-outline-primary ">
+        Siguiente
+      </button>
+        </div>
+    </div>
+</form>
+
+<!-- Fin NO -->
+
+
+<!-- <div formGroupName="nombrecompleto">
+   
+        <div class="form-group row" [ngClass]=" { 'text-danger': !forma.controls['nombrecompleto'].controls['nombre'].valid} ">
+            <label class="col-2 col-form-label ">Nombre</label>
+            <div class="col-8 ">
+
+                <input class="form-control " type="text " placeholder="Nombre " formControlName="nombre">
+
+                <div *ngIf="forma.get('nombrecompleto.nombre').errors?.required " class="form-control-feedback ">
+                    El nombre es necesario
+                </div>
+
+                <div *ngIf="forma.get('nombrecompleto.nombre').errors?.minlength " class="form-control-feedback ">
+                    Por lo menos 3 caracteres
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="form-group row ">
+            <label class="col-2 col-form-label ">Apellido</label>
+            <div class="col-8 ">
+
+                <input class="form-control " type="text " placeholder="Apellido " formControlName="apellido">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group row ">
+        <label class="col-2 col-form-label ">Correo</label>
+        <div class="col-md-8 ">
+
+            <input class="form-control " type="email " placeholder="Correo electrónico " formControlName="correo">
+        </div>
+    </div>
+
+
+    <div class="form-group row ">
+        <label class="col-2 col-form-label ">Pasatiempos</label>
+        <div class="col-md-8" formArrayName="pasatiempos">
+
+            <input *ngFor="let pasatiempo of forma.controls['pasatiempos'].controls; let i =index  " type="text" class="form-control" [formControlName]="i">
+        </div>
+
+
+
+    </div>
+    <button (click)="agregarPasatiempo()" type="button" class="btn btn-primary">Nuevo</button>
+
+
+    <div class="form-group row ">
+        <label class="col-2 col-form-label ">&nbsp;</label>
+        <div class="input-group col-md-8 ">
+            <button type="submit " class="btn btn-outline-primary ">
+        Guardar
+      </button>
+        </div>
+    </div> -->

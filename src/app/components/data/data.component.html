@@ -1,9 +1,64 @@
-<h4>Formularios <small>data</small></h4>
-<hr>
-<form [formGroup]="forma" (ngSubmit)="guardarCambios()">
+<div class="container">
+    <h4 class="text-center">NOVEDADES DE USUARIO</h4>
+    <hr>
+    <br><br>
+    <form [formGroup]="forma" (ngSubmit)="guardarCambios()">
 
-    <div formGroupName="nombrecompleto">
-        <!--  -->
+        <div class="form-group row">
+            <label class="col-2 col-form-label " for="exampleFormControlSelect1">Acceso Web</label>
+            <select class="form-control col-5" id="exampleFormControlSelect1">
+              <option>Aldeamo</option>
+              <option>BestVoiper</option>
+              <option>Digicel</option>
+              <option>Tigo</option>
+              <option>Movistar</option>
+              <option>Sendiu</option>
+              <option>Tigo Business</option>
+              <option>Virfon</option>
+              <option>WholeSale</option>
+              <option>Morval</option>
+              <option>Ivan Cardona</option>
+              <option>Mediatec</option>
+              <option>Edgar Robayo</option>
+              <option>Solusal</option>
+              <option>Julian Idarraga</option>
+            </select>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label " for="exampleFormControlSelect1">Tipo de Cliente </label>
+            <div class="form-check form-check-inline col-1">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Pruebas">
+                <label class="form-check-label" for="inlineRadio1">Pruebas</label>
+            </div>
+            <div class="form-check form-check-inline col-1">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Producción</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label ">Nombre del comercial</label>
+            <div class="col-5">
+
+                <input class="form-control " type="text " placeholder="Nombre " formControlName="nombre">
+            </div>
+        </div>
+
+        <div class="form-group row ">
+            <label class="col-2 col-form-label ">&nbsp;</label>
+            <div class="input-group col-md-8 ">
+                <button type="submit " class="btn btn-outline-primary ">
+            Siguiente
+          </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- <div formGroupName="nombrecompleto">
+   
         <div class="form-group row" [ngClass]=" { 'text-danger': !forma.controls['nombrecompleto'].controls['nombre'].valid} ">
             <label class="col-2 col-form-label ">Nombre</label>
             <div class="col-8 ">
@@ -61,6 +116,4 @@
         Guardar
       </button>
         </div>
-    </div>
-
-</form>
+    </div> -->
